@@ -64,7 +64,7 @@ def write_data(df):
     # writing data to csv file
     df.loc[df.Survived!=-888].to_csv(train_data_path)
     columns=[col for col in df.columns if col!='Survived']
-    df.loc[df.Survived!=-888,columns].to_csv(test_data_path)
+    df.loc[df.Survived==-888,columns].to_csv(test_data_path)
     
 if __name__=='__main__':
     df=read_data()
